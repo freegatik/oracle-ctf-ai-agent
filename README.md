@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="Oracle-CTF AI Agent" width="100%"/>
+<img src="assets/banner.png?v=2" alt="Oracle-CTF AI Agent" width="100%"/>
 
 # Oracle-CTF AI Agent
 
