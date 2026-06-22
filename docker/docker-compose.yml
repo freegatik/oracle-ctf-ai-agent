@@ -1,0 +1,17 @@
+services:
+  oracle:
+    image: gvenzl/oracle-free:slim
+    container_name: ctf_oracle
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_PASSWORD: ctfadmin          # пароль SYS/SYSTEM
+      APP_USER: ctfapp                    # стартовый прикладной пользователь
+      APP_USER_PASSWORD: ctfapp
+    volumes:
+      - ./init:/container-entrypoint-initdb.d   # seed SQL выполнится при первом старте
+    healthcheck:
+      test: ["CMD", "healthcheck.sh"]
+      interval: 10s
+      timeout: 5s
+      retries: 30

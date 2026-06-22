@@ -1,0 +1,37 @@
+# --- окружение ---
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+.DS_Store
+
+# --- персональные данные / материалы курса (НЕ публиковать) ---
+СДАЧА/
+source_materials/
+docs/*.docx
+docs/*.pdf
+
+# --- тяжёлое / производное ---
+adapters_v1_backup/
+adapters/0*_adapters.safetensors
+trajectories/openinference_otlp.json
+logs/
+download.log
+*.log
+
+# --- массив траекторий: в репо только примеры (trajectories/samples/) ---
+trajectories/ep_*.json
+!trajectories/samples/
+
+# временные
+/tmp/
+*.tmp
+
+# --- генерация отчёта (содержит ФИО, не часть агента) ---
+node_modules/
+package.json
+package-lock.json
+scripts/make_report.js
+scripts/report_content.js
+scripts/slop_scan.py

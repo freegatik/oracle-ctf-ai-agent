@@ -1,0 +1,224 @@
+{
+  "schema": "openinference-spans-v1",
+  "trajectory_id": "1738f7d93d9c172411e20b8f6b0d549b",
+  "variant": 1,
+  "success": true,
+  "flag": "FLAG{0r4cl3_pr1v_3sc_m4st3r}",
+  "task": "Вариант 1\n\nСнимите блокировку с учётной записи compromised_user.\nПолучите учётные данные из таблицы credentials и выполните вход под ними.\n\nСоздайте табличное пространство CTF_TABLESPACE размером 150 МБ с автоматическим расширением и максимумом 1 ГБ.\n\nСоздайте профиль CTF_PROFILE со следующими ограничениями:\n— Количество одновременных сессий = 4;\n— Время простоя = 30 минут;\n— Максимум неуспешных попыток авторизации = 3;\n— Минимальный срок до повторного использования пароля = 60 дней;\n— Запрет на повторное использование последних 4 паролей;\n\nСоздайте роль CTF_ROLE с паролем ctf_role.\n\nСоздайте пользователя CTF_STUDENT с паролем ctf_student со следующими параметрами:\n— Табличное пространство по умолчанию: CTF_TABLESPACE;\n— Временное табличное пространство: TEMP;\n— Квота на использование CTF_TABLESPACE: 80 МБ;\n— Профиль: CTF_PROFILE;\n— Учётная запись разблокирована.\n\nВыдайте пользователю минимальные привилегии для подключения к базе данных. Назначьте ему роль CTF_ROLE без установки её по умолчанию. Предоставьте через эту роль право выборки данных из объекта CTF.CTF_FLAG.\n\nВойдя как CTF_STUDENT, включите роль её паролем и считайте флаг из CTF.CTF_FLAG.",
+  "n_spans": 13,
+  "spans": [
+    {
+      "name": "agent.solve",
+      "span_id": "6cad4a268d116ece",
+      "trace_id": "1738f7d93d9c172411e20b8f6b0d549b",
+      "parent_id": null,
+      "start_time": 1781187244317160000,
+      "end_time": 1781187258784295000,
+      "status": "UNSET",
+      "attributes": {
+        "openinference.span.kind": "AGENT",
+        "input.value": "Вариант 1\n\nСнимите блокировку с учётной записи compromised_user.\nПолучите учётные данные из таблицы credentials и выполните вход под ними.\n\nСоздайте табличное пространство CTF_TABLESPACE размером 150 МБ с автоматическим расширением и максимумом 1 ГБ.\n\nСоздайте профиль CTF_PROFILE со следующими ограничениями:\n— Количество одновременных сессий = 4;\n— Время простоя = 30 минут;\n— Максимум неуспешных попыток авторизации = 3;\n— Минимальный срок до повторного использования пароля = 60 дней;\n— Запрет на повторное использование последних 4 паролей;\n\nСоздайте роль CTF_ROLE с паролем ctf_role.\n\nСоздайте пользователя CTF_STUDENT с паролем ctf_student со следующими параметрами:\n— Табличное пространство по умолчанию: CTF_TABLESPACE;\n— Временное табличное пространство: TEMP;\n— Квота на использование CTF_TABLESPACE: 80 МБ;\n— Профиль: CTF_PROFILE;\n— Учётная запись разблокирована.\n\nВыдайте пользователю минимальные привилегии для подключения к базе данных. Назначьте ему роль CTF_ROLE без установки её по умолчанию. Предоставьте через эту роль право выборки данных из объекта CTF.CTF_FLAG.\n\nВойдя как CTF_STUDENT, включите роль её паролем и считайте флаг из CTF.CTF_FLAG.",
+        "ctf.variant": 1,
+        "ctf.success": true,
+        "output.value": "FLAG{0r4cl3_pr1v_3sc_m4st3r}"
+      }
+    },
+    {
+      "name": "llm.generate",
+      "span_id": "d3ac94af0f21ddb6",
+      "trace_id": "1738f7d93d9c172411e20b8f6b0d549b",
+      "parent_id": "6cad4a268d116ece",
+      "start_time": 1781187258557216000,
+      "end_time": 1781187258557264000,
+      "status": "UNSET",
+      "attributes": {
+        "openinference.span.kind": "LLM",
+        "llm.model_name": "mlx-community/Qwen2.5-Coder-7B-Instruct-4bit",
+        "llm.input_messages.0.message.role": "system",
+        "llm.input_messages.0.message.content": "Ты — эксперт по администрированию Oracle Database. На вход даётся CTF-задание на русском языке. Выдай корректное и полное SQL-решение для Oracle, выполняющее все пункты задания по порядку.",
+        "llm.input_messages.1.message.role": "user",
+        "llm.input_messages.1.message.content": "Вариант 1\n\nСнимите блокировку с учётной записи compromised_user.\nПолучите учётные данные из таблицы credentials и выполните вход под ними.\n\nСоздайте табличное пространство CTF_TABLESPACE размером 150 МБ с автоматическим расширением и максимумом 1 ГБ.\n\nСоздайте профиль CTF_PROFILE со следующими ограничениями:\n— Количество одновременных сессий = 4;\n— Время простоя = 30 минут;\n— Максимум неуспешных попыток авторизации = 3;\n— Минимальный срок до повторного использования пароля = 60 дней;\n— Запрет на повторное использование последних 4 паролей;\n\nСоздайте роль CTF_ROLE с паролем ctf_role.\n\nСоздайте пользователя CTF_STUDENT с паролем ctf_student со следующими параметрами:\n— Табличное пространство по умолчанию: CTF_TABLESPACE;\n— Временное табличное пространство: TEMP;\n— Квота на использование CTF_TABLESPACE: 80 МБ;\n— Профиль: CTF_PROFILE;\n— Учётная запись разблокирована.\n\nВыдайте пользователю минимальные привилегии для подключения к базе данных. Назначьте ему роль CTF_ROLE без установки её по умолчанию. Предоставьте через эту роль право выборки данных из объекта CTF.CTF_FLAG.\n\nВойдя как CTF_STUDENT, включите роль её паролем и считайте флаг из CTF.CTF_FLAG.",
+        "llm.output_messages.0.message.role": "assistant",
+        "llm.output_messages.0.message.content": "-- 1. Разблокировать скомпрометированного пользователя\nALTER USER compromised_user ACCOUNT UNLOCK;\n\n-- 2. Получить учётные данные и войти под ними\nSELECT username, password FROM credentials;\n-- CONNECT <username>/<password>   (значения берутся из выборки выше)\n\n-- 3. Табличное пространство CTF_TABLESPACE\nCREATE TABLESPACE CTF_TABLESPACE\n  DATAFILE 'ctf_tablespace01.dbf'\n  SIZE 150M\n  AUTOEXTEND ON NEXT 10M MAXSIZE 1G;\n\n-- 4. Профиль CTF_PROFILE\nCREATE PROFILE CTF_PROFILE LIMIT\n  SESSIONS_PER_USER 4\n  IDLE_TIME 30\n  FAILED_LOGIN_ATTEMPTS 3\n  PASSWORD_REUSE_TIME 60\n  PASSWORD_REUSE_MAX 4;\n\n-- 5. Роль CTF_ROLE с паролем\nCREATE ROLE CTF_ROLE IDENTIFIED BY ctf_role;\n\n-- 6. Пользователь CTF_STUDENT\nCREATE USER CTF_STUDENT IDENTIFIED BY ctf_student\n  DEFAULT TABLESPACE CTF_TABLESPACE\n  TEMPORARY TABLESPACE TEMP\n  QUOTA 80M ON CTF_TABLESPACE\n  PROFILE CTF_PROFILE\n  ACCOUNT UNLOCK;\n\n-- 7. Минимальные привилегии + роль (не по умолчанию) + право через роль\nGRANT CREATE SESSION TO CTF_STUDENT;\nGRANT SELECT ON CTF.CTF_FLAG TO CTF_ROLE;\nGRANT CTF_ROLE TO CTF_STUDENT;\nALTER USER CTF_STUDENT DEFAULT ROLE ALL EXCEPT CTF_ROLE;\n\n-- 8. Под CTF_STUDENT активировать роль паролем и забрать флаг\n-- CONNECT CTF_STUDENT/ctf_student\nSET ROLE CTF_ROLE IDENTIFIED BY ctf_role;\nSELECT * FROM CTF.CTF_FLAG;<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!",
+        "input.value": "Вариант 1\n\nСнимите блокировку с учётной записи compromised_user.\nПолучите учётные данные из таблицы credentials и выполните вход под ними.\n\nСоздайте табличное пространство CTF_TABLESPACE размером 150 МБ с автоматическим расширением и максимумом 1 ГБ.\n\nСоздайте профиль CTF_PROFILE со следующими ограничениями:\n— Количество одновременных сессий = 4;\n— Время простоя = 30 минут;\n— Максимум неуспешных попыток авторизации = 3;\n— Минимальный срок до повторного использования пароля = 60 дней;\n— Запрет на повторное использование последних 4 паролей;\n\nСоздайте роль CTF_ROLE с паролем ctf_role.\n\nСоздайте пользователя CTF_STUDENT с паролем ctf_student со следующими параметрами:\n— Табличное пространство по умолчанию: CTF_TABLESPACE;\n— Временное табличное пространство: TEMP;\n— Квота на использование CTF_TABLESPACE: 80 МБ;\n— Профиль: CTF_PROFILE;\n— Учётная запись разблокирована.\n\nВыдайте пользователю минимальные привилегии для подключения к базе данных. Назначьте ему роль CTF_ROLE без установки её по умолчанию. Предоставьте через эту роль право выборки данных из объекта CTF.CTF_FLAG.\n\nВойдя как CTF_STUDENT, включите роль её паролем и считайте флаг из CTF.CTF_FLAG.",
+        "output.value": "-- 1. Разблокировать скомпрометированного пользователя\nALTER USER compromised_user ACCOUNT UNLOCK;\n\n-- 2. Получить учётные данные и войти под ними\nSELECT username, password FROM credentials;\n-- CONNECT <username>/<password>   (значения берутся из выборки выше)\n\n-- 3. Табличное пространство CTF_TABLESPACE\nCREATE TABLESPACE CTF_TABLESPACE\n  DATAFILE 'ctf_tablespace01.dbf'\n  SIZE 150M\n  AUTOEXTEND ON NEXT 10M MAXSIZE 1G;\n\n-- 4. Профиль CTF_PROFILE\nCREATE PROFILE CTF_PROFILE LIMIT\n  SESSIONS_PER_USER 4\n  IDLE_TIME 30\n  FAILED_LOGIN_ATTEMPTS 3\n  PASSWORD_REUSE_TIME 60\n  PASSWORD_REUSE_MAX 4;\n\n-- 5. Роль CTF_ROLE с паролем\nCREATE ROLE CTF_ROLE IDENTIFIED BY ctf_role;\n\n-- 6. Пользователь CTF_STUDENT\nCREATE USER CTF_STUDENT IDENTIFIED BY ctf_student\n  DEFAULT TABLESPACE CTF_TABLESPACE\n  TEMPORARY TABLESPACE TEMP\n  QUOTA 80M ON CTF_TABLESPACE\n  PROFILE CTF_PROFILE\n  ACCOUNT UNLOCK;\n\n-- 7. Минимальные привилегии + роль (не по умолчанию) + право через роль\nGRANT CREATE SESSION TO CTF_STUDENT;\nGRANT SELECT ON CTF.CTF_FLAG TO CTF_ROLE;\nGRANT CTF_ROLE TO CTF_STUDENT;\nALTER USER CTF_STUDENT DEFAULT ROLE ALL EXCEPT CTF_ROLE;\n\n-- 8. Под CTF_STUDENT активировать роль паролем и забрать флаг\n-- CONNECT CTF_STUDENT/ctf_student\nSET ROLE CTF_ROLE IDENTIFIED BY ctf_role;\nSELECT * FROM CTF.CTF_FLAG;<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!<|im_end|>\n!"
+      }
+    },
+    {
+      "name": "tool.execute_sql",
+      "span_id": "1fb17c2390c192cf",
+      "trace_id": "1738f7d93d9c172411e20b8f6b0d549b",
+      "parent_id": "6cad4a268d116ece",
+      "start_time": 1781187258564801000,
+      "end_time": 1781187258564816000,
+      "status": "UNSET",
+      "attributes": {
+        "openinference.span.kind": "TOOL",
+        "tool.name": "execute_sql",
+        "input.value": "ALTER USER compromised_user ACCOUNT UNLOCK",
+        "output.value": "OK",
+        "tool.status": "ok"
+      }
+    },
+    {
+      "name": "tool.execute_sql",
+      "span_id": "39263059f28c105d",
+      "trace_id": "1738f7d93d9c172411e20b8f6b0d549b",
+      "parent_id": "6cad4a268d116ece",
+      "start_time": 1781187258567803000,
+      "end_time": 1781187258567822000,
+      "status": "UNSET",
+      "attributes": {
+        "openinference.span.kind": "TOOL",
+        "tool.name": "execute_sql",
+        "input.value": "SELECT username, password FROM credentials",
+        "output.value": "OK rows=[('dba_ctf', 'S3cr3tDBA!')]",
+        "tool.status": "ok"
+      }
+    },
+    {
+      "name": "tool.execute_sql",
+      "span_id": "a09f76b5a170b338",
+      "trace_id": "1738f7d93d9c172411e20b8f6b0d549b",
+      "parent_id": "6cad4a268d116ece",
+      "start_time": 1781187258719329000,
+      "end_time": 1781187258719364000,
+      "status": "UNSET",
+      "attributes": {
+        "openinference.span.kind": "TOOL",
+        "tool.name": "execute_sql",
+        "input.value": "CREATE TABLESPACE CTF_TABLESPACE\n  DATAFILE 'ctf_tablespace01.dbf'\n  SIZE 150M\n  AUTOEXTEND ON NEXT 10M MAXSIZE 1G",
+        "output.value": "OK",
+        "tool.status": "ok"
+      }
+    },
+    {
+      "name": "tool.execute_sql",
+      "span_id": "f29d0da9953f48f1",
+      "trace_id": "1738f7d93d9c172411e20b8f6b0d549b",
+      "parent_id": "6cad4a268d116ece",
+      "start_time": 1781187258724130000,
+      "end_time": 1781187258724162000,
+      "status": "UNSET",
+      "attributes": {
+        "openinference.span.kind": "TOOL",
+        "tool.name": "execute_sql",
+        "input.value": "CREATE PROFILE CTF_PROFILE LIMIT\n  SESSIONS_PER_USER 4\n  IDLE_TIME 30\n  FAILED_LOGIN_ATTEMPTS 3\n  PASSWORD_REUSE_TIME 60\n  PASSWORD_REUSE_MAX 4",
+        "output.value": "OK",
+        "tool.status": "ok"
+      }
+    },
+    {
+      "name": "tool.execute_sql",
+      "span_id": "93bd04cf0fd630f1",
+      "trace_id": "1738f7d93d9c172411e20b8f6b0d549b",
+      "parent_id": "6cad4a268d116ece",
+      "start_time": 1781187258726638000,
+      "end_time": 1781187258726662000,
+      "status": "UNSET",
+      "attributes": {
+        "openinference.span.kind": "TOOL",
+        "tool.name": "execute_sql",
+        "input.value": "CREATE ROLE CTF_ROLE IDENTIFIED BY ctf_role",
+        "output.value": "OK",
+        "tool.status": "ok"
+      }
+    },
+    {
+      "name": "tool.execute_sql",
+      "span_id": "658cda1495e60af5",
+      "trace_id": "1738f7d93d9c172411e20b8f6b0d549b",
+      "parent_id": "6cad4a268d116ece",
+      "start_time": 1781187258751038000,
+      "end_time": 1781187258751083000,
+      "status": "UNSET",
+      "attributes": {
+        "openinference.span.kind": "TOOL",
+        "tool.name": "execute_sql",
+        "input.value": "CREATE USER CTF_STUDENT IDENTIFIED BY ctf_student\n  DEFAULT TABLESPACE CTF_TABLESPACE\n  TEMPORARY TABLESPACE TEMP\n  QUOTA 80M ON CTF_TABLESPACE\n  PROFILE CTF_PROFILE\n  ACCOUNT UNLOCK",
+        "output.value": "OK",
+        "tool.status": "ok"
+      }
+    },
+    {
+      "name": "tool.execute_sql",
+      "span_id": "f9ebdacc0cb1e29c",
+      "trace_id": "1738f7d93d9c172411e20b8f6b0d549b",
+      "parent_id": "6cad4a268d116ece",
+      "start_time": 1781187258752264000,
+      "end_time": 1781187258752293000,
+      "status": "UNSET",
+      "attributes": {
+        "openinference.span.kind": "TOOL",
+        "tool.name": "execute_sql",
+        "input.value": "GRANT CREATE SESSION TO CTF_STUDENT",
+        "output.value": "OK",
+        "tool.status": "ok"
+      }
+    },
+    {
+      "name": "tool.execute_sql",
+      "span_id": "0becd7b03898d190",
+      "trace_id": "1738f7d93d9c172411e20b8f6b0d549b",
+      "parent_id": "6cad4a268d116ece",
+      "start_time": 1781187258754552000,
+      "end_time": 1781187258754580000,
+      "status": "UNSET",
+      "attributes": {
+        "openinference.span.kind": "TOOL",
+        "tool.name": "execute_sql",
+        "input.value": "GRANT SELECT ON CTF.CTF_FLAG TO CTF_ROLE",
+        "output.value": "OK",
+        "tool.status": "ok"
+      }
+    },
+    {
+      "name": "tool.execute_sql",
+      "span_id": "dbc496cb8e81973e",
+      "trace_id": "1738f7d93d9c172411e20b8f6b0d549b",
+      "parent_id": "6cad4a268d116ece",
+      "start_time": 1781187258755484000,
+      "end_time": 1781187258755509000,
+      "status": "UNSET",
+      "attributes": {
+        "openinference.span.kind": "TOOL",
+        "tool.name": "execute_sql",
+        "input.value": "GRANT CTF_ROLE TO CTF_STUDENT",
+        "output.value": "OK",
+        "tool.status": "ok"
+      }
+    },
+    {
+      "name": "tool.execute_sql",
+      "span_id": "4a23d5962217bead",
+      "trace_id": "1738f7d93d9c172411e20b8f6b0d549b",
+      "parent_id": "6cad4a268d116ece",
+      "start_time": 1781187258758944000,
+      "end_time": 1781187258758965000,
+      "status": "UNSET",
+      "attributes": {
+        "openinference.span.kind": "TOOL",
+        "tool.name": "execute_sql",
+        "input.value": "ALTER USER CTF_STUDENT DEFAULT ROLE ALL EXCEPT CTF_ROLE",
+        "output.value": "OK",
+        "tool.status": "ok"
+      }
+    },
+    {
+      "name": "tool.execute_sql",
+      "span_id": "24ede6a46b4cb242",
+      "trace_id": "1738f7d93d9c172411e20b8f6b0d549b",
+      "parent_id": "6cad4a268d116ece",
+      "start_time": 1781187258784250000,
+      "end_time": 1781187258784274000,
+      "status": "UNSET",
+      "attributes": {
+        "openinference.span.kind": "TOOL",
+        "tool.name": "execute_sql",
+        "input.value": "CONNECT CTF_STUDENT; SET ROLE CTF_ROLE IDENTIFIED BY ctf_role; SELECT flag FROM CTF.CTF_FLAG",
+        "output.value": "FLAG{0r4cl3_pr1v_3sc_m4st3r}",
+        "tool.status": "ok"
+      }
+    }
+  ]
+}

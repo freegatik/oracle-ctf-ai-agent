@@ -1,0 +1,17 @@
+arize-phoenix==17.3.0
+arize-phoenix-client==2.8.0
+arize-phoenix-evals==3.1.0
+arize-phoenix-otel==0.16.1
+mlx==0.31.2
+mlx-lm==0.31.3
+mlx-metal==0.31.2
+openinference-semantic-conventions==0.1.30
+opentelemetry-api==1.42.1
+opentelemetry-exporter-otlp==1.42.1
+opentelemetry-exporter-otlp-proto-common==1.42.1
+opentelemetry-exporter-otlp-proto-grpc==1.42.1
+opentelemetry-exporter-otlp-proto-http==1.42.1
+opentelemetry-sdk==1.42.1
+oracledb==4.0.1
+pytest==9.0.3
+pytest-cov==7.1.0

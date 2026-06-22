@@ -1,0 +1,29 @@
+# QLoRA конфиг для mlx-lm — дообучение под Oracle CTF
+# Модель уже 4-битная => LoRA поверх неё = QLoRA. Влезает в 24GB M4 Pro.
+
+model: "mlx-community/Qwen2.5-Coder-7B-Instruct-4bit"
+train: true
+data: "data"
+adapter_path: "adapters"
+
+fine_tune_type: lora
+optimizer: adamw
+mask_prompt: true          # считать loss только по ответу ассистента (SQL)
+
+num_layers: 8              # сколько верхних слоёв тюним (память/качество баланс)
+batch_size: 1
+iters: 600
+learning_rate: 1e-5
+max_seq_length: 2048
+
+steps_per_report: 20
+steps_per_eval: 100
+val_batches: 25
+save_every: 100
+grad_checkpoint: true      # экономия памяти
+seed: 42
+
+lora_parameters:
+  rank: 16
+  scale: 20.0
+  dropout: 0.0

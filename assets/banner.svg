@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" font-family="'Segoe UI',Helvetica,Arial,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="0.55" stop-color="#0e1a2b"/>
+      <stop offset="1" stop-color="#10243b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff4b4b"/>
+      <stop offset="1" stop-color="#ff8a3d"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#36d1dc"/>
+      <stop offset="1" stop-color="#5b86e5"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="440" fill="url(#bg)"/>
+  <!-- сетка-фон -->
+  <g stroke="#1b2c44" stroke-width="1" opacity="0.5">
+    <path d="M0 110 H1280 M0 220 H1280 M0 330 H1280"/>
+    <path d="M213 0 V440 M426 0 V440 M640 0 V440 M853 0 V440 M1066 0 V440"/>
+  </g>
+  <rect x="0" y="0" width="10" height="440" fill="url(#accent)"/>
+
+  <!-- заголовок -->
+  <text x="70" y="120" fill="#ffffff" font-size="62" font-weight="800" letter-spacing="-1">Oracle-CTF <tspan fill="url(#accent)">AI Agent</tspan></text>
+  <text x="72" y="166" fill="#9fb3c8" font-size="25" font-weight="500">Автономный ИИ-агент администрирования СУБД Oracle</text>
+  <text x="72" y="198" fill="#6f8aa6" font-size="20">Autonomous LLM agent for Oracle DB administration · OpenInference traces</text>
+
+  <!-- терминал с флагом -->
+  <g transform="translate(72,232)">
+    <rect width="560" height="150" rx="12" fill="#0a0f18" stroke="#243a57"/>
+    <circle cx="22" cy="24" r="6" fill="#ff5f56"/><circle cx="44" cy="24" r="6" fill="#ffbd2e"/><circle cx="66" cy="24" r="6" fill="#27c93f"/>
+    <text x="20" y="68" fill="#7fd7a4" font-family="'SF Mono',Menlo,monospace" font-size="17">$ solve_image.sh image --task t.txt</text>
+    <text x="20" y="96" fill="#6f8aa6" font-family="'SF Mono',Menlo,monospace" font-size="15">[OK] CREATE ROLE · GRANT · SET ROLE …</text>
+    <text x="20" y="128" font-family="'SF Mono',Menlo,monospace" font-size="19" font-weight="700" fill="#ff8a3d" filter="url(#glow)">FLAG{0r4cl3_pr1v_3sc_m4st3r}</text>
+  </g>
+
+  <!-- стек-чипы -->
+  <g transform="translate(680,250)" font-size="17" font-weight="600">
+    <g fill="#0a0f18">
+      <rect x="0" y="0" width="240" height="34" rx="17" stroke="url(#cyan)"/>
+      <rect x="0" y="44" width="240" height="34" rx="17" stroke="url(#cyan)"/>
+      <rect x="0" y="88" width="240" height="34" rx="17" stroke="url(#cyan)"/>
+      <rect x="0" y="132" width="240" height="34" rx="17" stroke="url(#accent)"/>
+    </g>
+    <text x="18" y="23" fill="#cfe3f7">Qwen2.5-Coder-7B · QLoRA</text>
+    <text x="18" y="67" fill="#cfe3f7">MLX · Apple Silicon</text>
+    <text x="18" y="111" fill="#cfe3f7">Oracle Free 23ai · Docker</text>
+    <text x="18" y="155" fill="#ffd9c2">OpenInference · Phoenix</text>
+  </g>
+  <g transform="translate(950,250)" font-size="17" font-weight="600">
+    <g fill="#0a0f18">
+      <rect x="0" y="0" width="200" height="34" rx="17" stroke="#2f6f4f"/>
+      <rect x="0" y="44" width="200" height="34" rx="17" stroke="#2f6f4f"/>
+      <rect x="0" y="88" width="200" height="34" rx="17" stroke="#2f6f4f"/>
+      <rect x="0" y="132" width="200" height="34" rx="17" stroke="#2f6f4f"/>
+    </g>
+    <text x="18" y="23" fill="#bfe7cf">1510 траекторий</text>
+    <text x="18" y="67" fill="#bfe7cf">42/42 на стресс-тесте</text>
+    <text x="18" y="111" fill="#bfe7cf">16 тестов · 100%</text>
+    <text x="18" y="155" fill="#bfe7cf">эскалация привилегий</text>
+  </g>
+</svg>
